@@ -61,8 +61,7 @@ resource "aws_key_pair" "ec2_key" {
 # Save file
 resource "local_file" "ssh_key" {
   filename = "${aws_key_pair.ec2_key.key_name}.pem"
-  content  = tls_private_key.ec2_key.private_key_pemi
-content  = tls_private_key.ec2_key.private_key_pem
+  content  = tls_private_key.ec2_key.private_key_pem
   file_permission = "400"
 }
 
